@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: kampus_ror_production
-  username: kampus_ror
-  password: <%= ENV['KAMPUS_ROR_DATABASE_PASSWORD'] %>
+  username: twantoro
+  password: <%= ENV['bismillah'] %>
