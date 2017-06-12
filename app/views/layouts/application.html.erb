@@ -17,7 +17,12 @@
 	  </main>
 		<%= render "material/footer" %>
   </body>
-  <script>
-  $(".button-collapse").sideNav();
-  </script>
+	<script>
+			$('.datepicker').pickadate({
+				selectMonths: true, // Creates a dropdown to control month
+				selectYears: true,
+				yearRange: '-50:+0'
+				});
+			$(".button-collapse").sideNav();
+	</script>
 </html>
