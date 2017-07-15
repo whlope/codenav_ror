@@ -16,6 +16,7 @@
 //= require jquery
 //= require materialize-sprockets
 //= require jquery-ui/widgets/datepicker
+//= require toastr
 
 
 
