@@ -1,6 +1,23 @@
 ActiveAdmin.register Course do
 	permit_params :title, :description, :price, :status, :image
 	
+	
+	index do
+		selectable_column
+		column :title do |course|
+			link_to course.title, admin_course_path(course)
+		end
+		column :price do |course|
+			number_to_currency(course.price)
+		end
+		column :status
+		column :number_to_task do |course|
+			course.task.length
+		end
+		actions
+	end	
+	
+	
 	show do
 		attributes_table do
 			row :title
