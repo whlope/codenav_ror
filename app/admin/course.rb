@@ -1,7 +1,7 @@
 ActiveAdmin.register Course do
 	permit_params :title, :description, :price, :status, :image
-	
-	
+
+
 	index do
 		selectable_column
 		column :title do |course|
@@ -12,12 +12,12 @@ ActiveAdmin.register Course do
 		end
 		column :status
 		column :number_to_task do |course|
-			course.task.length
+			course.tasks.length
 		end
 		actions
-	end	
-	
-	
+	end
+
+
 	show do
 		attributes_table do
 			row :title
@@ -31,14 +31,14 @@ ActiveAdmin.register Course do
 			end
 		end
 	end
-	
+
 	form do |f|
 		f.inputs do
 			f.input :title
 			f.input :description
 			f.input :price
-			f.input :status, as: :select, collection: ["Not Active" , "Active"], include_blank: false
-			f.input :image, hint: course.image.present? ? image_tag(course.image.url, height:100) : content_tag(:span, 'No Image') 
+			f.input :status, as: :select, collection: ["Active" , "Not Active"], include_blank: true
+			f.input :image, hint: course.image.present? ? image_tag(course.image.url, height:100) : content_tag(:span, 'No Image')
 		end
 		f.actions
 	end
