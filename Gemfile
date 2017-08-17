@@ -65,3 +65,5 @@ gem 'active_skin'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
 gem 'validate_url'
+
+gem 'cancancan', '~> 2.0'

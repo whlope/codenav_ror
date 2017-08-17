@@ -1,7 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  
+  before_action :authenticate_user!, only: [:subscribe, :my_courses]
   before_action :configure_permitted_parameters, if: :devise_controller?
+
+  rescue_from CanCan::AccessDenied do
+    redirect_to root_path, alert:"Access Denied"
+  end
 
   protected
 
