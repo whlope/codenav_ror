@@ -4,7 +4,7 @@
     <title>Kampus Ruby on rails</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -16,13 +16,13 @@
 		</div>
 	  </main>
 		<%= render "material/footer" %>
+    <script>
+        $('.datepicker').pickadate({
+          selectMonths: true,
+          selectYears: 90,
+          max: -90,
+          });
+        $(".button-collapse").sideNav();
+    </script>
   </body>
-	<script>
-			$('.datepicker').pickadate({
-				selectMonths: true, // Creates a dropdown to control month
-				selectYears: 90,
-				max: -90,
-				});
-			$(".button-collapse").sideNav();
-	</script>
 </html>
