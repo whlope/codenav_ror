@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery.raty
 //= require rails-ujs
-//= require turbolinks
 //= require_tree
 //= require materialize-sprockets
 //= require jquery-ui/widgets/datepicker

@@ -24,11 +24,11 @@ class CoursesController < ApplicationController
         :cmd => "_xclick",
         :upload => 1,
         :amount => @course.price,
-        :notify_url => "https://91e7609d.ngrok.io/payment_notification",
+        :notify_url => "https://057bfc16.ngrok.io/payment_notification",
         :item_name => @course.title,
         :item_number => @subscription.id,
         :quantity => 1,
-        :return => "https://91e7609d.ngrok.io/my_courses"
+        :return => "https://057bfc16.ngrok.io/my_courses"
       }
       redirect_to "https://www.sandbox.paypal.com/cgi_bin/webscr?" + values.to_query
     end
@@ -41,7 +41,11 @@ class CoursesController < ApplicationController
   def payment_notification
     params.permit!
     @subscription = Subscription.find(params[:item_number])
-    @subscription.update_attributes({active: true}) if @subscription.active == false && params[:payment_status] == "Completed"
+     if @subscription.active == false && params[:payment_status] == "Completed"
+       if @subscription.update_attributes({active: true, payment_status: "Completed"})
+         PaymentMailer.payment_completed(@subscription).deliver
+       end
+     end
     respond_to do |format|
       format.html {render text:"ok"}
     end

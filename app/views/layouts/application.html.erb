@@ -4,25 +4,30 @@
     <title>Kampus Ruby on rails</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
-
   <body>
-	<%= render "material/header" %>
+  	<%= render "material/header" %>
  	  <main>
 		<div class="container">
 			<%= render "material/message" %>
 			<%= yield %>
 		</div>
 	  </main>
-		<%= render "material/footer" %>
+
+    <!-- footer -->
+    <%= render "material/footer" %>
     <script>
-        $('.datepicker').pickadate({
+      $('.datepicker').pickadate({
           selectMonths: true,
           selectYears: 90,
           max: -90,
           });
         $(".button-collapse").sideNav();
     </script>
+    <!-- footer  end -->
   </body>
+  <script type="script/javascripts">
+    $(".button-collapse").sideNav();
+  </script>
 </html>
