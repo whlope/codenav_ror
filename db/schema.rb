@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170819144021) do
+ActiveRecord::Schema.define(version: 20170825035217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 20170819144021) do
     t.boolean "active", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "payment_status", default: "pending"
     t.index ["course_id"], name: "index_subscriptions_on_course_id"
     t.index ["user_id", "course_id"], name: "index_subscriptions_on_user_id_and_course_id"
     t.index ["user_id"], name: "index_subscriptions_on_user_id"
