@@ -24,11 +24,11 @@ class CoursesController < ApplicationController
         :cmd => "_xclick",
         :upload => 1,
         :amount => @course.price,
-        :notify_url => "https://057bfc16.ngrok.io/payment_notification",
+        :notify_url => "http://b312d12d.ngrok.io/payment_notification",
         :item_name => @course.title,
         :item_number => @subscription.id,
         :quantity => 1,
-        :return => "https://057bfc16.ngrok.io/my_courses"
+        :return => "http://localhost:3000/my_courses"
       }
       redirect_to "https://www.sandbox.paypal.com/cgi_bin/webscr?" + values.to_query
     end
