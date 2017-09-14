@@ -5,11 +5,8 @@ class ReviewsController < ApplicationController
       @review = current_user.reviews.new(review_params)
       @course = Course.friendly.find(params[:course_id])
       @review.course = @course
-      if @review.save
+      @review.save
         redirect_to @course, notice: "Review sucsessfully submitted"
-      else
-        redirect_to @course, alert: "Review failed"
-      end
     end
     def destroy
       @review.destroy
