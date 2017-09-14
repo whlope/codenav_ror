@@ -14,4 +14,5 @@ two:
   description: MyText
   video_url: MyString
   image: MyString
-  slug: task-one
+  slug: task-two
+  preview: true

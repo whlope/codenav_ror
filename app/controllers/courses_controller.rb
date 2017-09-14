@@ -17,20 +17,9 @@ class CoursesController < ApplicationController
     @course = Course.friendly.find(params[:id])
     @subscription = Subscription.find_or_create_by(user: current_user, course_id: @course.id)
     if @subscription.active?
-      redirect_to my_courses_path
+      redirect_to @course
     else
-      values = {
-        :business => "ajarsinau-facilitator@gmail.com",
-        :cmd => "_xclick",
-        :upload => 1,
-        :amount => @course.price,
-        :notify_url => "http://b312d12d.ngrok.io/payment_notification",
-        :item_name => @course.title,
-        :item_number => @subscription.id,
-        :quantity => 1,
-        :return => "http://localhost:3000/my_courses"
-      }
-      redirect_to "https://www.sandbox.paypal.com/cgi_bin/webscr?" + values.to_query
+      redirect_to "https://www.sandbox.paypal.com/cgi_bin/webscr?" + @course.paypal_link(current_user)
     end
   end
 

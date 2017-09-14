@@ -14,4 +14,4 @@ two:
   price:
   status: MyString
   image: MyString
-  slug: course_two
+  slug: course-two

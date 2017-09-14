@@ -16,4 +16,18 @@ class Course < ApplicationRecord
 		reviews.blank? ? 0 : reviews.average(:star).round(2)
 	end
 
+	def paypal_link(user)
+		subscription = Subscription.find_or_create_by(user: user, course_id: id)
+		{
+			:business => "ajarsinau-facilitator@gmail.com",
+			:cmd => "_xclick",
+			:upload => 1,
+			:amount => price,
+			:notify_url => "http://b312d12d.ngrok.io/payment_notification",
+			:item_name => title,
+			:item_number => subscription.id,
+			:quantity => 1,
+			:return => "http://localhost:3000/my_courses"
+		}.to_query
+	end
 end
