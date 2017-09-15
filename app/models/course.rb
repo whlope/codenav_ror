@@ -23,7 +23,7 @@ class Course < ApplicationRecord
 			:cmd => "_xclick",
 			:upload => 1,
 			:amount => price,
-			:notify_url => "http://b312d12d.ngrok.io/payment_notification",
+			:notify_url => "http://a42d4534.ngrok.io/payment_notification",
 			:item_name => title,
 			:item_number => subscription.id,
 			:quantity => 1,

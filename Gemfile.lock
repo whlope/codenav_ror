@@ -67,6 +67,8 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    acts_as_list (0.9.7)
+      activerecord (>= 3.0)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
     arbre (1.1.1)
@@ -335,6 +337,7 @@ PLATFORMS
 DEPENDENCIES
   active_skin
   activeadmin!
+  acts_as_list
   byebug
   cancancan (~> 2.0)
   capybara (~> 2.13)
@@ -365,4 +368,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.15.3
+   1.15.4
