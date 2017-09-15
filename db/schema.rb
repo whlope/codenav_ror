@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170825035217) do
+ActiveRecord::Schema.define(version: 20170915092717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20170825035217) do
     t.integer "image_file_size"
     t.datetime "image_updated_at"
     t.string "slug"
+    t.integer "position"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -110,6 +111,7 @@ ActiveRecord::Schema.define(version: 20170825035217) do
     t.datetime "image_updated_at"
     t.boolean "preview", default: false
     t.string "slug"
+    t.integer "position"
     t.index ["course_id"], name: "index_tasks_on_course_id"
   end
 

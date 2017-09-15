@@ -16,5 +16,9 @@
       <hr/>
       <%= @task.description %>
    </div>
+   <div class="bottom">
+     <%= link_to "Previous", course_task_path(@task.course, @previous_task), class: "btn left" if @previous_task %>
+     <%= link_to "Next", course_task_path(@task.course, @next_task), class: "btn right" if @next_task %>
+   </div>
   </div>
 </div>
