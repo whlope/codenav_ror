@@ -1,10 +1,10 @@
 class Course < ApplicationRecord
 	extend FriendlyId
  	friendly_id :title, use: :slugged
-	has_many :tasks, dependent: :destroy
+	has_many :tasks, -> { order(position: :asc) }, dependent: :destroy
 	has_many :subscriptions, dependent: :destroy
 	has_many :reviews, dependent: :destroy
-
+	
 	validates :title, presence: true, length: {maximum: 50}
 	validates :description, presence: true
 	validates :price, presence: true, numericality: true
