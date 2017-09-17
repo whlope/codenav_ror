@@ -6,12 +6,19 @@ class ReviewsController < ApplicationController
       @course = Course.friendly.find(params[:course_id])
       @review.course = @course
       @review.save
-        redirect_to @course, notice: "Review sucsessfully submitted"
-    end
+      respond_to do |format|
+        format.html do
+          redirect_to @course, notice: "Review sucsessfully submitted"
+        end
+          format.js
+        end
+      end
+
     def destroy
       @review.destroy
       redirect_to @review.course, notice: "Review sucsessfully removed"
     end
+
     def review_params
       params.require(:review).permit(:star, :comment, :course_id, :user_id)
     end

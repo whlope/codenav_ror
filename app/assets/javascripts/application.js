@@ -11,9 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.raty
 //= require rails-ujs
 //= require_tree
 //= require materialize-sprockets
 //= require jquery-ui/widgets/datepicker
 //= require toastr
+//= require jquery.raty

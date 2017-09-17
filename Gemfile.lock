@@ -26,6 +26,14 @@ GIT
       sprockets (>= 3.0, < 4.1)
       sprockets-es6 (>= 0.9.2)
 
+GIT
+  remote: https://github.com/sabril/activeadmin_sortable_table.git
+  revision: 07fc1c3213940e29e8034efe8e535e2c26a25835
+  specs:
+    activeadmin_sortable_table (1.2.0)
+      activeadmin (>= 1.0.0.pre1)
+      uber (= 0.0.15)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -307,6 +315,7 @@ GEM
       thread_safe (~> 0.1)
     tzinfo-data (1.2017.2)
       tzinfo (>= 1.0.0)
+    uber (0.0.15)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
     validate_url (1.0.2)
@@ -337,6 +346,7 @@ PLATFORMS
 DEPENDENCIES
   active_skin
   activeadmin!
+  activeadmin_sortable_table!
   acts_as_list
   byebug
   cancancan (~> 2.0)
@@ -368,4 +378,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.15.4
+   1.16.0.pre.2

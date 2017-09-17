@@ -4,9 +4,9 @@ class Task < ApplicationRecord
   belongs_to :course
   acts_as_list scope: :course
 
-  validates :title, presence: true, length: {maximum: 50}
-  validates :description, presence: true
-  validates :video_url, presence: true, :url => true
+  #validates :title, presence: true, length: {maximum: 50}
+  #validates :description, presence: true
+  #validates :video_url, presence: true, :url => true
 
   def next_task
     course.tasks.where("position > ?", position).first
