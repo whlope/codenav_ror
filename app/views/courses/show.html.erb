@@ -50,9 +50,13 @@
 			 </div>
 		</div>
 		<div class="card-contend">
-			<h4> Review </h4>
-			<%= render "reviews/form" if user_signed_in? && current_user.has_course?(@course) && !current_user.has_course_review?(@course) %>
-			<%= render "reviews/reviews" %>
+			<h5> Reviews </h5>
+				<div id="review">
+						<%= render "reviews/form" if user_signed_in? && current_user.has_course?(@course) && !current_user.has_course_review?(@course) %>
+				</div>
+				<div class="review_list">
+					<%= render "reviews/reviews" %>
+			</div>
 		</div>
 	</div>
 </div>
