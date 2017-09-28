@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: wantoro
+  api_key: '854537683382731'
+  api_secret: s8MHc1XNkEJ1fXrUuSKSf8imm2k
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: wantoro
+  api_key: '854537683382731'
+  api_secret: s8MHc1XNkEJ1fXrUuSKSf8imm2k
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: wantoro
+  api_key: '854537683382731'
+  api_secret: s8MHc1XNkEJ1fXrUuSKSf8imm2k
+  enhance_image_tag: true
+  static_image_support: false
