@@ -22,7 +22,7 @@ class CoursesController < ApplicationController
     if @subscription.active?
       redirect_to @course
     else
-      redirect_to "https://www.sandbox.paypal.com/cgi_bin/webscr?" + @course.paypal_link(current_user)
+      redirect_to "#{Rails.application.secrets.paypal_url}/cgi_bin/webscr?" + @course.paypal_link(current_user)
     end
   end
 

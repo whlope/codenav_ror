@@ -15,4 +15,12 @@ class TaskControllerTest < ActionDispatch::IntegrationTest
     get course_task_url(courses(:one), tasks(:one))
     assert_response :success
   end
+  test "should be adble to completed task and redirect to next_task" do
+    course = courses(:one)
+    sign_in(users(:user_one))
+    put complete_course_task_path(course, tasks(:one))
+    assert_redirected_to course_task_path(course, tasks(:three))
+    put complete_course_task_path(course, tasks(:three))
+    assert_redirected_to course_path(course)
+  end
 end
