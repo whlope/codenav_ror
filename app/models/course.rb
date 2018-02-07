@@ -19,7 +19,7 @@ class Course < ApplicationRecord
 	def paypal_link(user)
 		subscription = Subscription.find_or_create_by(user: user, course_id: id)
 		{
-			:business => "ajarsinau-facilitator@gmail.com",
+			:business => Rails.application.secrets.paypal_email,
 			:cmd => "_xclick",
 			:upload => 1,
 			:amount => price,
@@ -29,5 +29,8 @@ class Course < ApplicationRecord
 			:quantity => 1,
 			:return => "http://localhost:3000/my_courses"
 		}.to_query
+	end
+	def user_progress(user)
+		tasks.length > 0 ? (user.user_tasks.completed.where(task_id: task_ids).length * 100 / tasks.length) : 0
 	end
 end

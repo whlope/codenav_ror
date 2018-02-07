@@ -39,6 +39,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -59,7 +60,7 @@ gem 'jquery-ui-rails'
 gem 'figaro'
 gem 'omniauth-facebook'
 gem 'toastr-rails'
-gem 'activeadmin', github: "activeadmin"
+gem 'activeadmin'
 gem 'active_skin'
 #gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'carrierwave'
@@ -71,3 +72,4 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'simplecov', :require => false, :group => :test
 gem 'acts_as_list'
 gem "activeadmin_sortable_table", github: "sabril/activeadmin_sortable_table"
+gem 'active_admin_editor',  github: "boontdustie/active_admin_editor"

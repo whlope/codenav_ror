@@ -3,6 +3,7 @@ class Task < ApplicationRecord
   friendly_id :title, use: :slugged
   belongs_to :course
   acts_as_list scope: :course
+  has_many :user_tasks, dependent: :destroy
 
   #validates :title, presence: true, length: {maximum: 50}
   #validates :description, presence: true
