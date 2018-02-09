@@ -1,5 +1,5 @@
 ActiveAdmin.register Task do
-  permit_params :course_id, :title, :description, :video_url, :image, :preview, :position
+  permit_params :course_id, :title, :description, :video_url, :position
 
 
   member_action :sort, method: :post do
@@ -17,10 +17,13 @@ ActiveAdmin.register Task do
     resource.move_to_top
     redirect_to admin_course_path(resource.course), notice: "Task #{resource.title} move to top."
   end
+
   form do |f|
 		f.inputs do
-			f.input :title
-			f.input :description, as: :html_editor
+      f.input :course_id,  as: :select, :collection => Course.all.pluck(:title, :id), :required => true
+			f.input :title, :required => true
+			f.input :description, as: :html_editor, :required => true
+      f.input :video_url, :required => true, :label => "Video", :placeholder => "Use /embed/fgsagfsa For Youtube"
 		end
 		f.actions
 	end
